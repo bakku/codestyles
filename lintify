@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]
+then
+    echo "usage: lintify [linter]"
+fi
+
+case "$1" in
+    rubocop) curl https://raw.githubusercontent.com/bakku/codestyles/master/rubocop.yml --output .rubocop.yml ;;
+    *) echo "Unsupported linter" ;;
+esac
